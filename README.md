@@ -6,4 +6,4 @@ AirBnb-automate-messaging is a Puppeteer Script. This script scrape the airbnb h
 
 ## Preview
 
-![Preview](https://github.com/zeyad111hatem/AirBnb-automate-messaging/blob/main/static/screen.gif)
+![Preview](https://github.com/zeyad111hatem/AirBnb-automate-messaging/blob/main/static/messaging.png)
