@@ -9,21 +9,21 @@ async function run() {
   await page.goto("https://airbnb.com/login");
 
   await page.click('[data-testid*="social-auth-button-email"]');
-  await page.type("#email-login-email", "zeyad3hatem3@gmail.com");
+  await page.type("#email-login-email", "Andest86@cuvox.de");
 
   await page.click(".t1ng71ne");
 
   var passwordInput = "#email-signup-password";
   await page.waitForSelector(passwordInput);
-  await page.type(passwordInput, "test@333");
+  await page.type(passwordInput, "98989796!9796!");
   await page.click(".t1dqvypu");
   await page.waitForSelector(".c14whb16");
 
   console.log("Logged In");
 
-  await page.goto("https://www.airbnb.com/s/Nasr-City--Cairo-Governorate--Egypt/homes?tab_id=home_tab&refinement_paths%5B%5D=%2Fhomes&flexible_trip_lengths%5B%5D=one_week&monthly_start_date=2023-07-01&monthly_length=3&price_filter_input_type=0&price_filter_num_nights=5&channel=EXPLORE&date_picker_type=calendar&source=structured_search_input_header&search_type=autocomplete_click&query=Nasr%20City%2C%20Cairo%20Governorate&place_id=ChIJ76fLgBM8WBQRjZcGng4mQdU&checkin=2023-06-10&checkout=2023-06-11")
+  await page.goto("https://www.airbnb.com/s/Madinaty--Cairo-Governorate--Egypt/homes?tab_id=home_tab&refinement_paths%5B%5D=%2Fhomes&flexible_trip_lengths%5B%5D=one_week&monthly_start_date=2023-07-01&monthly_length=3&price_filter_input_type=0&price_filter_num_nights=5&channel=EXPLORE&query=Madinaty%2C%20Cairo%20Governorate&place_id=ChIJRwPSlwEeWBQRO-D9PGcV6Hc&date_picker_type=calendar&checkin=2023-06-13&checkout=2023-06-14&source=structured_search_input_header&search_type=autocomplete_click")
   await page.waitForSelector('span.tyi4kqb.dir.dir-ltr')
-  const [getXpath] = await page.$x('/html/body/div[5]/div/div/div[1]/div/div[2]/div/div/div/div[1]/div[2]/main/div[2]/div/div[1]/div/div/section/h1/span');
+  const [getXpath] = await page.$x('//*[@id="site-content"]/div/div[1]/div/div/div/section/h1/span');
   result =  await page.evaluate(name => name.textContent, getXpath);
   console.log(result)
   elements = parseInt(result.slice(14).split(" ")[0])
@@ -33,7 +33,6 @@ async function run() {
 }
 
 var startPoint = 0;
-var sentMessages = 0;
 async function sendMessages(page) {
   const hrefs = await page.$$eval('a.l1ovpqvx.bn2bl2p.dir.dir-ltr', links => links.map(a => a.href));
   for (let i = 0; i < hrefs.length; i++) {
@@ -61,7 +60,7 @@ async function sendMessages(page) {
     await singlePage.type("._69l1qs", "Please if u can also share more details I will appreciate that");
     await singlePage.waitForSelector('[data-testid*="send-message-button"]');
     await singlePage.click('[data-testid*="send-message-button"]');
-    
+    await singlePage.waitForSelector("span.ll4r2nl.dir.dir-ltr")
     await singlePage.close()
     if (startPoint == 18 && pages != 0) {
       startPoint = 0;
